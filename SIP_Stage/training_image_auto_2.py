@@ -39,7 +39,7 @@ def main():
         image_counter = 1
         while True:
             # Capture and save the image
-            camera.capture(f'/home/pi/images/headstamp{image_counter:03d}.jpg')
+            camera.capture(f'/home/clraifo/camera/training_images{image_counter:03d}.jpg')
             print(f"Image captured: headstamp{image_counter:03d}.jpg")
 
             # Move the block 2.25 inches to allow the case to fall
