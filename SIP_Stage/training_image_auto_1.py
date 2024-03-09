@@ -1,4 +1,4 @@
-# uses 200 steps pre revolution
+# uses 200 steps per revolution
 
 from picamera import PiCamera
 import RPi.GPIO as GPIO
