@@ -1,3 +1,11 @@
+# This script utilizes a Raspberry Pi, a camera module, and a stepper motor to classify images 
+# using a TensorFlow Lite model and perform physical actions based on the classification results.  
+# The setup includes GPIO pins for motor control and camera initialization for capturing images. 
+# The images are processed and fed into a TensorFlow Lite interpreter to classify them according 
+# to the loaded model and labels. Depending on the classification, the stepper motor rotates in  
+# a specific direction to sort objects. This demonstrates integrating machine learning with physical 
+# hardware for practical applications like sorting or automation tasks.
+
 from picamera import PiCamera
 import RPi.GPIO as GPIO
 import time
