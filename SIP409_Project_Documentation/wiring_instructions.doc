@@ -1,0 +1,42 @@
+Wiring Instructions for the Brass Goblin Project
+
+  Components:
+
+  - Raspberry Pi 4 Model B
+  - A4988 Stepper Motor Driver
+  - NEMA 17 Stepper Motor
+  - Raspberry Pi Camera Module 2
+  - Breadboard and Jumper Wires
+  - External Power Supply for Stepper Motor (9-12V recommended)
+  
+  A4988 Stepper Motor Driver Wiring:
+
+    Power Supply to A4988:
+
+  - Connect the motor power supply (9-12V) to the VMOT and GND pins on the A4988.
+  - Connect the Raspberry Pi's 5V pin to the VDD pin on the A4988 for logic power.
+  - Connect GND from the Raspberry Pi to the GND pin on the A4988 for a common ground.
+
+    Stepper Motor to A4988:
+
+  - Connect one motor coil to the 1A and 1B pins, and the other coil to the 2A and 2B pins on the A4988.
+      * The specific wiring order for the coils can be found in the motor's datasheet.
+
+    A4988 to Raspberry Pi GPIO:
+
+  - Connect Raspberry Pi GPIO pin 17 (DIR_PIN) to the DIR pin on the A4988 for direction control.
+  - Connect Raspberry Pi GPIO pin 16 (STEP_PIN) to the STEP pin on the A4988 for step control.
+  - (Optional) Connect Raspberry Pi GPIO pin 23 (ENABLE_PIN) to the ENABLE pin on the A4988 to toggle the motor's power state.
+
+Raspberry Pi Camera Module 2 Wiring:
+  - Insert the camera ribbon cable into the CSI connector on the Raspberry Pi, ensuring proper alignment and secure connection.
+
+Software Setup:
+
+  - Use the 'raspi-config' tool to enable the camera interface.
+  - Install the necessary Python libraries (RPi.GPIO, picamera, numpy, Pillow) to interact with the GPIO pins and the camera module.
+  - Ensure tflite-runtime is installed for running TensorFlow Lite models.
+
+Final Steps:
+  - Double-check all connections before powering on the Raspberry Pi.
+  - Run your Python script to start capturing images and controlling the stepper motor based on image classification results.
